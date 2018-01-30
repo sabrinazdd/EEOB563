@@ -1,0 +1,239 @@
+
+P A U P *
+Version 4.0a (build 159) for Unix/Linux (built on Nov 17 2017 at 11:35:17)
+Tue Jan 30 10:18:15 2018
+
+        -----------------------------NOTICE-----------------------------
+          This is an alpha-test version that is still changing rapidly.
+          It will expire on 1 Apr 2018.
+        
+          Please report bugs to dave@phylosolutions.com
+        ----------------------------------------------------------------
+
+
+paup> AllTrees
+
+Error(#531): Exhaustive search is not allowed for more than 12 taxa (unrooted trees). The number of
+             trees would exceed the maximum that can be represented as a 32-bit integer value.
+
+paup> PandB
+
+Error(#152): Command "PandB" is unrecognized.
+                 If it is spelled correctly, look for problems in a previous command, such as an
+                 unintentional semicolon.
+
+paup> tstatus full
+
+Taxon-status summary:
+   Original data matrix contains 20 taxa
+   No taxa have been deleted
+   No taxa have been assigned to the outgroup: outgroup defaults to first taxon (Platypus)
+
+Current status of all taxa:
+
+   Taxon       Status
+ 1 Platypus    -
+ 2 Echidna     -
+ 3 Opossum     -
+ 4 Wallaby     -
+ 5 Bandicoot   -
+ 6 Elephant    -
+ 7 Aardvark    -
+ 8 Tenrec      -
+ 9 Sloth       -
+10 Armadillo   -
+11 Human       -
+12 Tree shrew  -
+13 Rabbit      -
+14 Mouse       -
+15 Hedgehog    -
+16 Flying fox  -
+17 Cat         -
+18 Dog         -
+19 Pig         -
+20 Whale       -
+
+paup> delete 1-5
+
+Taxon-deletion status changed:
+  5 taxa deleted
+  Total number of taxa now deleted = 5
+  Number of nondeleted taxa = 15
+
+paup> paup>undelete all
+
+Error(#152): Command "paup>undelete" is unrecognized.
+                 If it is spelled correctly, look for problems in a previous command, such as an
+                 unintentional semicolon.
+
+paup> hsearch
+
+Heuristic search settings:
+  Optimality criterion = parsimony
+    Character-status summary:
+      Of 382 total characters:
+        All characters are of type 'unord'
+        All characters have equal weight
+        209 characters are constant
+        69 variable characters are parsimony-uninformative
+        Number of parsimony-informative characters = 104
+    Gaps are treated as "missing"
+  Starting tree(s) obtained via stepwise addition
+    Addition sequence: simple (reference taxon = Elephant)
+    Number of trees held at each step = 1
+  Branch-swapping algorithm: tree-bisection-reconnection (TBR) with reconnection limit = 8
+    Steepest descent option not in effect
+  Initial 'Maxtrees' setting = 100
+  Branches collapsed (creating polytomies) if maximum branch length is zero
+  'MulTrees' option in effect
+  No topological constraints in effect
+  Trees are unrooted
+
+Heuristic search completed
+  Total number of rearrangements tried = 1399
+  Score of best tree(s) found = 578
+  Number of trees retained = 1
+  Time used = 0.01 sec (CPU time = 0.00 sec)
+
+paup> showtrees all
+
+Note: No outgroup has been defined; tree is (arbitrarily) rooted at first nondeleted taxon.
+
+Tree 1 (rooted using default outgroup)
+
+/---------------------------------------------------------------------------------------- Elephant
+|
+|                            /----------------------------------------------------------- Aardvark
+|                            |
+|                            |                                                /---------- Tenrec
+|                            |                                      /---------+
+|                            |                                      |         \---------- Armadillo
+|                            |                             /--------+
+|                            |                             |        |         /---------- Mouse
+|                            |                             |        \---------+
+|                   /--------+                   /---------+                  \---------- Hedgehog
+|                   |        |                   |         |
+|                   |        |                   |         |                  /---------- Tree shrew
+|                   |        |                   |         \------------------+
+|                   |        |         /---------+                            \---------- Rabbit
+|                   |        |         |         |
+|                   |        |         |         |                            /---------- Flying fox
+|                   |        |         |         |                  /---------+
+|         /---------+        |         |         |                  |         \---------- Pig
+|         |         |        \---------+         \------------------+
+|         |         |                  |                            \-------------------- Whale
+|         |         |                  |
+|         |         |                  |                                      /---------- Cat
+\---------+         |                  \--------------------------------------+
+          |         |                                                         \---------- Dog
+          |         |
+          |         \-------------------------------------------------------------------- Human
+          |
+          \------------------------------------------------------------------------------ Sloth
+
+paup> describe
+
+Tree description:
+
+  Unrooted tree(s) rooted using outgroup method
+
+  Note: No outgroup has been defined; tree is (arbitrarily) rooted at first nondeleted taxon.
+  Optimality criterion = parsimony
+    Character-status summary:
+      Of 382 total characters:
+        All characters are of type 'unord'
+        All characters have equal weight
+        209 characters are constant
+        69 variable characters are parsimony-uninformative
+        Number of parsimony-informative characters = 104
+    Gaps are treated as "missing"
+    Character-state optimization: Accelerated transformation (ACCTRAN)
+
+Tree 1 (rooted using default outgroup)
+
+Tree length = 578
+Consistency index (CI) = 0.6090
+Homoplasy index (HI) = 0.3910
+CI excluding uninformative characters = 0.5311
+HI excluding uninformative characters = 0.4689
+Retention index (RI) = 0.3274
+Rescaled consistency index (RC) = 0.1994
+
+/---------------------------------------------------------------------------------------- Elephant
+|
+|                            /----------------------------------------------------------- Aardvark
+|                            |
+|                            |                                                /---------- Tenrec
+|                            |                                      /--------21
+|                            |                                      |         \---------- Armadillo
+|                            |                             /-------23
+|                            |                             |        |         /---------- Mouse
+|                            |                             |        \--------22
+|                   /-------31                   /--------25                  \---------- Hedgehog
+|                   |        |                   |         |
+|                   |        |                   |         |                  /---------- Tree shrew
+|                   |        |                   |         \-----------------24
+|                   |        |         /--------28                            \---------- Rabbit
+|                   |        |         |         |
+|                   |        |         |         |                            /---------- Flying fox
+|                   |        |         |         |                  /--------26
+|         /--------32        |         |         |                  |         \---------- Pig
+|         |         |        \--------30         \-----------------27
+|         |         |                  |                            \-------------------- Whale
+|         |         |                  |
+|         |         |                  |                                      /---------- Cat
+\--------33         |                  \-------------------------------------29
+          |         |                                                         \---------- Dog
+          |         |
+          |         \-------------------------------------------------------------------- Human
+          |
+          \------------------------------------------------------------------------------ Sloth
+
+paup> outgroup 1-2
+
+Outgroup status changed:
+  2 taxa transferred to outgroup
+  Total number of taxa now in outgroup = 2 (but all are deleted)
+  Number of ingroup taxa = 18 (of which 15 are nondeleted)
+
+paup> contree
+
+Strict consensus of 1 tree:
+
+/---------------------------------------------------------------------------------------- Elephant
+|
+|                            /----------------------------------------------------------- Aardvark
+|                            |
+|                            |                                                /---------- Tenrec
+|                            |                                      /---------+
+|                            |                                      |         \---------- Armadillo
+|                            |                             /--------+
+|                            |                             |        |         /---------- Mouse
+|                            |                             |        \---------+
+|                   /--------+                   /---------+                  \---------- Hedgehog
+|                   |        |                   |         |
+|                   |        |                   |         |                  /---------- Tree shrew
+|                   |        |                   |         \------------------+
+|                   |        |         /---------+                            \---------- Rabbit
+|                   |        |         |         |
+|                   |        |         |         |                            /---------- Flying fox
+|                   |        |         |         |                  /---------+
+|         /---------+        |         |         |                  |         \---------- Pig
+|         |         |        \---------+         \------------------+
+|         |         |                  |                            \-------------------- Whale
+|         |         |                  |
+|         |         |                  |                                      /---------- Cat
+\---------+         |                  \--------------------------------------+
+          |         |                                                         \---------- Dog
+          |         |
+          |         \-------------------------------------------------------------------- Human
+          |
+          \------------------------------------------------------------------------------ Sloth
+
+paup> savetree file=hsearch.tre brlen=yes
+
+1 tree saved to file "~/EEOB563-Spring2018/EEOB563/hsearch.tre"
+
+paup> cleartrees; log stop; defaults hsearch; quit
+
+All trees have been cleared from memory.

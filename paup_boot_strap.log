@@ -1,0 +1,59 @@
+
+P A U P *
+Version 4.0a (build 159) for Unix/Linux (built on Nov 17 2017 at 11:35:17)
+Tue Jan 30 10:34:23 2018
+
+        -----------------------------NOTICE-----------------------------
+          This is an alpha-test version that is still changing rapidly.
+          It will expire on 1 Apr 2018.
+        
+          Please report bugs to dave@phylosolutions.com
+        ----------------------------------------------------------------
+
+
+paup> outgroup 1-2; set outroot=mono
+
+Outgroup status changed:
+  2 taxa transferred to outgroup
+  Total number of taxa now in outgroup = 2
+  Number of ingroup taxa = 18
+
+paup> bootstrapl [bootstrap options] {/hsearch options]
+
+Error(#152): Command "bootstrapl" is unrecognized.
+                 If it is spelled correctly, look for problems in a previous command, such as an
+                 unintentional semicolon.
+
+paup> bootstrap nereps=200 treefile=boot.tre search=heuristic
+
+Error(#143): Keyword "nereps" is not recognized.
+                 If the keyword is valid for the current command and it is spelled correctly, look
+                 for problems in a previous command, such as a missing semicolon.
+
+paup> bootstrap nereps=200 treefile=boot.tre search=heuristic/start=stepwise addseq=random nreps=10 swap=TBR
+
+Error(#143): Keyword "nereps" is not recognized.
+                 If the keyword is valid for the current command and it is spelled correctly, look
+                 for problems in a previous command, such as a missing semicolon.
+
+paup> bootstrap nreps=200 treefile=boot.tre search=heuristi/start=stepwise addseq=random nreps=10 swap+TBR
+
+Error(#143): Keyword "swap+TBR" is not recognized.
+                 If the keyword is valid for the current command and it is spelled correctly, look
+                 for problems in a previous command, such as a missing semicolon.
+
+Trees for each replicate written to treefile: ~/EEOB563-Spring2018/EEOB563/boot.tre
+
+paup> exit
+
+Error(#152): Command "exit" is unrecognized.
+                 If it is spelled correctly, look for problems in a previous command, such as an
+                 unintentional semicolon.
+
+paup> exit
+
+Error(#152): Command "exit" is unrecognized.
+                 If it is spelled correctly, look for problems in a previous command, such as an
+                 unintentional semicolon.
+
+paup> quit
